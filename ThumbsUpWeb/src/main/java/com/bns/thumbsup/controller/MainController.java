@@ -46,5 +46,16 @@ public class MainController {
 	public @ResponseBody Iterable<com.bns.thumbsup.vo.User> getAllUser(){
 		return userService.userSelect();
 	}
+	
+	@RequestMapping(value = "/user/reg", method = RequestMethod.POST)
+	public String userRegPass(UserVO userVO) {
+		// 회원가입 메서드
+		reg_service.userReg_service(userVO);
+		// 인증 메일 보내기 메서드
+		mailsender.mailSendWithUserKey(userVO.getUser_email(), userVO.getUser_id());
+		
+		return "redirect:/";
+	}
+
 
 }

@@ -4,7 +4,27 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
+
 <html>
+<script>
+		function Idshow(){
+			document.getElementById("Id").style.display="";
+			document.getElementById("Password").style.display="";
+		}
+		function Login(){
+			console.log("로그인 시도");
+		}
+		function LoginFail(){
+			alert("계정이 없습니다. 회원가입 폼으로 이동");
+			document.getElementById("Id").style.display="";
+			document.getElementById("Password").style.display="";
+			document.getElementById("email").style.display="";
+			document.getElementById("Gender").style.display="";
+			document.getElementById("Nickname").style.display="";
+		}
+	
+</script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<head>
 		<title>Radius by TEMPLATED</title>
 		<meta charset="utf-8" />
@@ -17,12 +37,28 @@
 			<header id="header">
 				<div class="inner">
 					<div class="content">
-						<h1>Radius</h1>
-						<h2>A fully responsive masonry-style<br />
-						portfolio template.</h2>
-						<a href="#" class="button big alt"><span>Let's Go</span></a>
+						<h1>Thumbs Up</h1>
+						<h2>present</h2>
+						<div id="Id" style="display:none">
+							ID  <input id='ID' type='text' style="border: #888888 2px solid;" /><br>
+						</div>
+						<div id="Password" style="display:none">
+							 Password  <input id='PASSWORD' type='password'/>
+						</div>
+						<div id="email" style="display:none">
+							 email  <input id='Email' type='text'/>
+						</div>
+						<div id="Gender" style="display:none">
+							 gender  <input id='gender' type='text'/>
+						</div>
+						<div id="Nickname" style="display:none">
+							 Nickname  <input id='Nickname' type='text'/>
+						</div>
+						<button id="test" onclick="Idshow()"><span>test</span></button>
+						<button id="test2" onclick="LoginFail()"><span>test2</span></button>
+						<button href="#" id="Letsgo"class="button big alt" onclick="Login()"><span>Go</span></button>
 					</div>
-					<a href="#" class="button hidden"><span>Let's Go</span></a>
+					
 				</div>
 			</header>
 
@@ -117,6 +153,7 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
 
 	</body>
 </html>

@@ -23,5 +23,18 @@ public class UserService {
 	public Iterable<User> userSelect(){
 		return userRepository.findAll();
 	}
+	// 회원가입 서비스
+	public int userReg_service(UserVO userVO) {
+
+		int resultCnt = 0;
+
+		userDao = userSqlSessin.getMapper(UserDaoInterface.class);
+		try {
+			resultCnt = userDao.regUser(userVO);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 
 }
